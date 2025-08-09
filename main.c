@@ -14,11 +14,14 @@
 
 
 #include "run.h"
+#include "log.h"
+#include "lora.h"
 #include <stdio.h>
 #include "mcc_generated_files/system/config_bits.h"
 
 void task(void) {
-    printf("Hello from the application!\n");
+    log_debug("Hello from the application!");
+    lora_enable();
     LED_Toggle();
 }
 
