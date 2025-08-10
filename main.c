@@ -20,13 +20,14 @@
 #include "mcc_generated_files/system/config_bits.h"
 
 void task(void) {
+    LED_SetHigh();
     log_debug("Hello from the application!");
     lora_enable();
     
     double data[] = {123.456};
     lora_send(32, data, 1);
     
-    LED_Toggle();
+    LED_SetLow();
 }
 
 int main(void) {
